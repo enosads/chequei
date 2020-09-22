@@ -18,9 +18,9 @@ class LoginAPI(APIView):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user=user)
-                membro = user.membro
+                usuario = user.usuario
                 data = {}
-                data.update(serializers.UsuarioSerializer(instance=membro, context={'request': request}).data),
+                data.update(serializers.UsuarioSerializer(instance=usuario, context={'request': request}).data),
                 response = Response(data, status=status.HTTP_200_OK)
             elif User.objects.filter(username=username).count() > 0:
 
@@ -44,9 +44,9 @@ class LoginPorTokenAPI(APIView):
 
         user = request.user
         if user:
-            membro = user.membro
+            usuario = user.usuario
             data = {}
-            data.update(serializers.UsuarioSerializer(instance=membro, context={'request': request}).data),
+            data.update(serializers.UsuarioSerializer(instance=usuario, context={'request': request}).data),
             response = Response(data, status=status.HTTP_200_OK)
         else:
             data = {
