@@ -10,7 +10,7 @@ class LoginAPI(APIView):
     permission_classes = [permissions.AllowAny, ]
 
     def post(self, request, ):
-        serializer = serializers.LoginMembroSerializer(data=request.data)
+        serializer = serializers.LoginSerializer(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
             username = data.get('username')

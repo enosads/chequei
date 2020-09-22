@@ -4,7 +4,7 @@ from rest_framework.authtoken.models import Token
 from mobile.models import Endereco, Usuario
 
 
-class LoginMembroSerializer(serializers.Serializer):
+class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField()
 

@@ -93,6 +93,6 @@ class Endereco(models.Model):
         return '%s - %s - %s' % (self.rua, self.bairro, self.numero)
 
 
-class Vaga(models.Model):
+class Inscricao(models.Model):
     usuario = models.ForeignKey('Usuario', on_delete=models.PROTECT, )
     evento = models.ForeignKey('Evento', on_delete=models.PROTECT, )
