@@ -34,4 +34,4 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = (
             'id', 'nome', 'telefone', 'email', 'data_nascimento', 'cpf', 'username', 'token',
-            'endereco_id', 'imagem')
+            'endereco_id', 'endereco')
